@@ -1,0 +1,14 @@
+{
+  "name": "puppeteer-cookie-getter",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-remote-interface": "^0.28.0"
+  }
+}
