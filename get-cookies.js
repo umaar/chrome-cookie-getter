@@ -1,28 +1,28 @@
-const CDP = require('chrome-remote-interface');
 const fs = require('fs');
+const {CDP: cdp} = require('chrome-remote-interface');
 
 async function example() {
-    let client;
-    try {
-        client = await CDP();
-        const {Network} = client;
-        Network.requestWillBeSent((params) => {
-            console.log('requestWillBeSent: ', params.request.url);
-        });
+	let client;
+	try {
+		client = await cdp();
+		const network = client.Network;
+		network.requestWillBeSent(parameters => {
+			console.log('requestWillBeSent:', parameters.request.url);
+		});
 
-        const cookies = await Network.getAllCookies();
+		const cookies = await network.getAllCookies();
 
-        console.log('--- Cookies start ---\n\n');
-        console.log(cookies);
-        console.log('\n\n --- Cookies end ---');
-        fs.writeFileSync('./cookies.json', JSON.stringify(cookies, null, '\t'));
-    } catch (err) {
-        console.error(err);
-    } finally {
-        if (client) {
-            await client.close();
-        }
-    }
+		console.log('--- Cookies start ---\n\n');
+		console.log(cookies);
+		console.log('\n\n --- Cookies end ---');
+		fs.writeFileSync('./cookies.json', JSON.stringify(cookies, null, '\t'));
+	} catch (error) {
+		console.error(error);
+	} finally {
+		if (client) {
+			await client.close();
+		}
+	}
 }
 
 example();

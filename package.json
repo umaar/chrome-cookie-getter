@@ -2,13 +2,21 @@
   "name": "puppeteer-cookie-getter",
   "private": true,
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chrome-remote-interface": "^0.28.0"
+  },
+  "devDependencies": {
+    "@umaar/personal-eslint-config": "latest",
+    "xo": "^0.25.3"
+  },
+  "xo": {
+    "extends": "./node_modules/@umaar/personal-eslint-config/rules.json"
   }
 }

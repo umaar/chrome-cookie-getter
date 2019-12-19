@@ -1,5 +1,7 @@
 
-# Cookies
+### Cookie getter/setter over the Chrome remote interface
+
+[![Actions Status](https://github.com/umaar/chrome-cookie-getter/workflows/Node%20CI/badge.svg)](https://github.com/umaar/chrome-cookie-getter/actions)
 
 ```sh
 # in terminal tab 1
