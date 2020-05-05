@@ -1,5 +1,5 @@
-const fs = require('fs');
-const {CDP: cdp} = require('chrome-remote-interface');
+import fs from 'fs';
+import cdp from 'chrome-remote-interface';
 
 async function example() {
 	let client;

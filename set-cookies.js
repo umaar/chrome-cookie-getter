@@ -1,9 +1,9 @@
-const fs = require('fs');
-const {CDP: cdp} = require('chrome-remote-interface');
+import fs from 'fs';
+import cdp from 'chrome-remote-interface';
 
 const cookies = JSON.parse(fs.readFileSync('./cookies.json').toString());
 
-async function example() {
+async function setCookies() {
 	let client;
 	try {
 		client = await cdp();
@@ -26,4 +26,4 @@ async function example() {
 	}
 }
 
-example();
+setCookies();
